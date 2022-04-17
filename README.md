@@ -41,3 +41,19 @@ packer build \
     ami.json
 ```
 Source AMI above is a `Ubuntu 20` image.
+
+### [Misc] SSH access to EC2 instance
+- Generate SSH Keys
+```
+ssh-keygen
+```
+- Copy `.pub` key content and import it to EC2 >> Network & Security >> Key Pairs
+- Access EC2 instance with following command
+```
+ssh -i ~/.ssh/id_ssh_file ubuntu@[Public IP-Address/Public DNS address]
+```
+- for verbosity
+```
+ssh -i ~/.ssh/id_ssh_file ubuntu@[IP] -vvvvv
+```
+(no. of v ~ more verbose)
